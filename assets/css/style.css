@@ -1,0 +1,437 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+    color: #fff;
+}
+body {
+    background-color: #000;
+    font-family: "Lato", Helvetica, Arial;
+    display: flex;
+    margin: 0;
+    min-height: 100vh;
+}
+::-webkit-scrollbar {
+    background-color: #811;
+}
+::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 6px;
+    background-color: #ccc;
+    background-clip: content-box;
+}
+.models {
+    display: none;
+}
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 60px;
+    background-color: #a11;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+}
+.menu-openner {
+    margin-right: 15px;
+    font-size: 26px;
+    background-color: #c11;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.menu-openner span {
+    margin-right: 10px;
+}
+.menu-closer {
+    width: 32px;
+    height: 32px;
+    display: none;
+    font-size: 30px;
+}
+aside {
+    background-color: #a11;
+    width: 0vw;
+    font-family: "Hepta Slab", Helvetica, Arial;
+    transition: all ease 0.2s;
+    overflow-x: hidden;
+}
+aside.show {
+    width: 30vw;
+}
+.cart--area {
+    padding: 20px;
+}
+main {
+    flex: 1;
+    padding: 20px;
+}
+h1 {
+    font-family: "Bungee", Helvetica, Arial;
+}
+.burger-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.burger-item {
+    text-align: center;
+    max-width: 250px;
+    font-family: "Hepta Slab", Helvetica, Arial;
+    margin: 0 auto 70px auto;
+}
+.burger-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+.burger-item--img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 150px;
+    margin-bottom: 70px;
+    background-color: #5553;
+    border: 5px solid #fff1;
+    border-radius: 100px;
+    box-shadow: 0px 0px 120px rgba(255, 255, 255, 0.7);
+}
+.burger-item--img img {
+    width: 250px;
+    height: auto;
+}
+.burger-item--add {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #811;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    margin-top: -25px;
+    transition: all ease 0.2s;
+}
+.burger-item a:hover .burger-item--add {
+    background-color: #c11;
+}
+.burger-item--price {
+    font-size: 15px;
+    margin-top: 5px;
+}
+.burger-item--name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #b11;
+    margin-top: 5px;
+}
+.burger-item--desc {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.burgerWindowArea {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+    transition: all ease 0.5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+.burgerWindowBody {
+    width: 900px;
+    padding: 20px;
+    background-image: linear-gradient(#000, #811);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #999;
+    display: flex;
+    margin: 20px 0px;
+}
+.burgerBig {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.burgerBig img {
+    height: 400px;
+    width: auto;
+}
+.burgerInfo {
+    flex: 1;
+    font-family: "Hepta Slab", Helvetica, Arial;
+    padding-bottom: 50px;
+}
+.burgerInfo h1 {
+    margin-top: 50px;
+}
+.burgerInfo .burgerInfo--desc {
+    font-size: 15px;
+    margin: 10px 30px 0px 0px;
+    font-family: "Lato", Helvetica, Arial;
+}
+.burgerInfo--sector {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.burgerInfo--friesSizes {
+    display: inline-flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.burgerInfo--friesSize {
+    padding: 10px 12px;
+    color: #000;
+    background-color: #eee;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.burgerInfo--friesSize:hover {
+    background-color: #ccc;
+}
+.burgerInfo--friesSize.selected {
+    background-color: #000;
+    color: #fff;
+}
+.burgerInfo--friesSize.selected span {
+    color: #d6d6d6;
+}
+.burgerInfo--friesSize span {
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+}
+.burgerInfo--price {
+    display: flex;
+    align-items: center;
+}
+.burgerInfo--actualPrice {
+    font-size: 28px;
+    margin-right: 30px;
+}
+.burgerInfo--qtarea {
+    display: inline-flex;
+    background-color: #eee;
+    border-radius: 10px;
+    height: 30px;
+}
+.burgerInfo--qtarea button {
+    border: 0;
+    background-color: transparent;
+    font-size: 17px;
+    outline: 0;
+    cursor: pointer;
+    padding: 0px 10px;
+    color: #333;
+}
+.burgerInfo--qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color: #000;
+}
+.burgerInfo--addButton {
+    margin-top: 30px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    background-color: #eee;
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.burgerInfo--addButton:hover {
+    background-color: #000;
+    color: #eee;
+}
+.burgerInfo--cancelButton {
+    display: inline-block;
+    cursor: pointer;
+}
+.burgerInfo--cancelMobileButton {
+    display: none;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+.cart {
+    margin-bottom: 20px;
+}
+.cart--item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.cart--item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+.cart--item-nome {
+    flex: 1;
+}
+.cart--item--qtarea {
+    display: inline-flex;
+    background-color: #eee;
+    border-radius: 10px;
+    height: 30px;
+}
+.cart--item--qtarea button {
+    border: 0;
+    background-color: transparent;
+    font-size: 17px;
+    outline: 0;
+    cursor: pointer;
+    padding: 0px 10px;
+    color: #333;
+}
+.cart--item--qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color: #000;
+}
+.cart--totalitem {
+    padding: 15px 0;
+    border-top: 1px solid #79b9dd;
+    color: #315970;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.cart--totalitem span:first-child {
+    font-weight: bold;
+}
+.cart--totalitem.big {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+.cart--finalizar {
+    padding: 20px 30px;
+    border-radius: 20px;
+    background-color: #b55;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    transition: all ease 0.2s;
+}
+.cart--finalizar:hover {
+    background-color: #eee;
+    color: #f00;
+}
+
+@media (max-width: 1000px) {
+    .burger-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .burgerInfo--friesSizes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 840px) {
+    body {
+        flex-direction: column;
+    }
+    .burger-area {
+        display: block;
+    }
+    .burger-item {
+        max-width: 100%;
+    }
+    header {
+        display: flex;
+    }
+    main {
+        padding-top: 60px;
+    }
+
+    aside {
+        width: auto;
+        position: fixed;
+        left: 100vw;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transition: all ease 0.2s;
+    }
+    aside.show {
+        width: auto;
+    }
+    .cart--area {
+        width: 100vw;
+    }
+
+    .menu-closer {
+        display: block;
+    }
+
+    .burgerWindowArea {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .burgerWindowBody {
+        width: 100vw;
+        display: block;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .burgerBig img {
+        width: 75%;
+        height: auto;
+    }
+
+    .burgerInfo h1 {
+        margin-top: 20px;
+    }
+
+    .burgerInfo--friesSizes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .burgerInfo--qtarea {
+        height: 60px;
+    }
+    .burgerInfo--qtarea button {
+        font-size: 25px;
+        padding: 0px 25px;
+    }
+    .burgerInfo--qt {
+        line-height: 60px;
+        font-size: 20px;
+    }
+    .burgerInfo--addButton {
+        font-size: 20px;
+        display: block;
+        text-align: center;
+        margin: 30px auto;
+    }
+
+    .burgerInfo--cancelButton {
+        display: none;
+    }
+    .burgerInfo--cancelMobileButton {
+        display: block;
+    }
+}

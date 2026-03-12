@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Burgers</title>
+        <link rel="stylesheet" href="style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bungee&family=Hepta+Slab:wght@1..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="models">
+            <div class="burger-item">
+                <a href="">
+                    <div class="burger-item--img"><img src="" alt="" /></div>
+                    <div class="burger-item--add">+</div>
+                </a>
+                <div class="burger-item--price">R$ --</div>
+                <div class="burger-item--name">--</div>
+                <div class="burger-item--desc">--</div>
+            </div>
+            <div class="cart--item">
+                <img src="" alt="" />
+                <div class="cart--item-nome">--</div>
+                <div class="cart--item--qtarea">
+                    <button class="cart--item-qtmenos">-</button>
+                    <div class="cart--item--qt">1</div>
+                    <button class="cart--item-qtmais">+</button>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div class="menu-openner"><span>0</span>🛒</div>
+        </header>
+        <main>
+            <h1>burgers</h1>
+            <div class="burger-area"></div>
+        </main>
+        <aside>
+            <div class="cart--area">
+                <div class="menu-closer">❌</div>
+                <h1>Seu Carrinho</h1>
+                <div class="cart"></div>
+                <div class="cart--details">
+                    <div class="cart--totalitem subtotal">
+                        <span>Subtotal</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--totalitem desconto">
+                        <span>Desconto (-10%)</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--totalitem total big">
+                        <span>Total</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--finalizar">Finalizar a compra</div>
+                </div>
+            </div>
+        </aside>
+        <div class="burgerWindowArea">
+            <div class="burgerWindowBody">
+                <div class="burgerInfo--cancelMobileButton">Voltar</div>
+                <div class="burgerBig">
+                    <img src="" alt="" />
+                </div>
+                <div class="burgerInfo">
+                    <h1>--</h1>
+                    <div class="burgerInfo--desc">--</div>
+                    <div class="burgerInfo--friesSizearea">
+                        <div class="burgerInfo--sector">
+                            Tamanho das batatas ( Opcional )
+                        </div>
+                        <div class="burgerInfo--friesSizes">
+                            <div
+                                data-key="0"
+                                class="burgerInfo--friesSize selected"
+                            >
+                                SEM BATATAS <span>--</span>
+                            </div>
+                            <div data-key="1" class="burgerInfo--friesSize">
+                                PEQUENA <span>--</span>
+                            </div>
+                            <div data-key="2" class="burgerInfo--friesSize">
+                                MÉDIA <span>--</span>
+                            </div>
+                            <div data-key="3" class="burgerInfo--friesSize">
+                                GRANDE <span>--</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burgerInfo--pricearea">
+                        <div class="burgerInfo--sector">Preço</div>
+                        <div class="burgerInfo--price">
+                            <div class="burgerInfo--actualPrice">R$ --</div>
+                            <div class="burgerInfo--qtarea">
+                                <button class="burgerInfo--qtmenos">-</button>
+                                <div class="burgerInfo--qt">1</div>
+                                <button class="burgerInfo--qtmais">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burgerInfo--addButton">
+                        Adicionar ao carrinho
+                    </div>
+                    <div class="burgerInfo--cancelButton">Cancelar</div>
+                </div>
+            </div>
+        </div>
+
+        <script src="burgers.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
