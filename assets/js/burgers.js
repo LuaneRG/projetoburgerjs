@@ -2,7 +2,7 @@ let burgerJson = [
     {
         id: 1,
         name: "Knight Burger",
-        img: "assets/images/burger1.png",
+        img: "assets/images/burger1.webp",
         price: 20.19,
         sizes: ["", "110g", "160g", "200g"],
         description:
@@ -11,7 +11,7 @@ let burgerJson = [
     {
         id: 2,
         name: "Montanha de Carne",
-        img: "assets/images/burger2.png",
+        img: "assets/images/burger2.webp",
         price: 18.0,
         sizes: ["", "110g", "160g", "200g"],
         description:
@@ -20,7 +20,7 @@ let burgerJson = [
     {
         id: 3,
         name: "Hambúrguer Real",
-        img: "assets/images/burger3.png",
+        img: "assets/images/burger3.webp",
         price: 17.45,
         sizes: ["", "110g", "160g", "200g"],
         description:
@@ -29,7 +29,7 @@ let burgerJson = [
     {
         id: 4,
         name: "Burgata",
-        img: "assets/images/burger4.png",
+        img: "assets/images/burger4.webp",
         price: 19.77,
         sizes: ["", "110g", "160g", "200g"],
         description:
@@ -38,7 +38,7 @@ let burgerJson = [
     {
         id: 5,
         name: "Redondo",
-        img: "assets/images/burger5.png",
+        img: "assets/images/burger5.webp",
         price: 21.43,
         sizes: ["", "110g", "160g", "200g"],
         description:
@@ -47,7 +47,7 @@ let burgerJson = [
     {
         id: 6,
         name: "GreenBurger",
-        img: "assets/images/burger6.png",
+        img: "assets/images/burger6.webp",
         price: 18.55,
         sizes: ["", "110g", "160g", "200g"],
         description:
