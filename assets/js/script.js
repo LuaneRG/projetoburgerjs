@@ -2,11 +2,11 @@ let cart = [];
 let modalQt = 1;
 let modalKey = 0;
 
-const c = (el) => document.querySelector(el);
-const cs = (el) => document.querySelectorAll(el);
+const qs = (el) => document.querySelector(el);
+const qsa = (el) => document.querySelectorAll(el);
 
 burgerJson.map((item, index) => {
-    let burgerItem = c(".models .burger-item").cloneNode(true);
+    let burgerItem = qs(".models .burger-item").cloneNode(true);
 
     //Preencher as informações em burgerItem
 
@@ -23,15 +23,15 @@ burgerJson.map((item, index) => {
         modalQt = 1;
         modalKey = key;
 
-        c(".burgerBig img").src = burgerJson[key].img;
-        c(".burgerInfo h1").innerHTML = burgerJson[key].name;
-        c(".burgerInfo--desc").innerHTML = burgerJson[key].description;
-        c(".burgerInfo--actualPrice").innerHTML = `R$ ${burgerJson[
+        qs(".burgerBig img").src = burgerJson[key].img;
+        qs(".burgerInfo h1").innerHTML = burgerJson[key].name;
+        qs(".burgerInfo--desc").innerHTML = burgerJson[key].description;
+        qs(".burgerInfo--actualPrice").innerHTML = `R$ ${burgerJson[
             key
         ].price.toFixed(2)}`;
 
-        c(".burgerInfo--friesSize.selected").classList.remove("selected");
-        cs(".burgerInfo--friesSize").forEach((size, sizeIndex) => {
+        qs(".burgerInfo--friesSize.selected").classList.remove("selected");
+        qsa(".burgerInfo--friesSize").forEach((size, sizeIndex) => {
             if (sizeIndex === 0) {
                 size.classList.add("selected");
             }
@@ -39,57 +39,57 @@ burgerJson.map((item, index) => {
                 burgerJson[key].sizes[sizeIndex];
         });
 
-        c(".burgerInfo--qt").innerHTML = modalQt;
+        qs(".burgerInfo--qt").innerHTML = modalQt;
 
-        c(".burgerWindowArea").style.opacity = 0;
-        c(".burgerWindowArea").style.display = "flex";
+        qs(".burgerWindowArea").style.opacity = 0;
+        qs(".burgerWindowArea").style.display = "flex";
         setTimeout(() => {
-            c(".burgerWindowArea").style.opacity = 1;
+            qs(".burgerWindowArea").style.opacity = 1;
         }, 200);
     });
 
     // Adicionar na tela
 
-    c(".burger-area").append(burgerItem);
+    qs(".burger-area").append(burgerItem);
 });
 
 // Eventos do Modal
 
 function closeModal() {
-    c(".burgerWindowArea").style.opacity = 0;
+    qs(".burgerWindowArea").style.opacity = 0;
 
     setTimeout(() => {
-        c(".burgerWindowArea").style.display = "none";
+        qs(".burgerWindowArea").style.display = "none";
     }, 500);
 }
 
-cs(".burgerInfo--cancelButton, .burgerInfo--cancelMobileButton").forEach(
+qsa(".burgerInfo--cancelButton, .burgerInfo--cancelMobileButton").forEach(
     (item) => {
         item.addEventListener("click", closeModal);
     },
 );
-c(".burgerInfo--qtmenos").addEventListener("click", () => {
+qs(".burgerInfo--qtmenos").addEventListener("click", () => {
     if (modalQt > 1) {
         modalQt--;
-        c(".burgerInfo--qt").innerHTML = modalQt;
+        qs(".burgerInfo--qt").innerHTML = modalQt;
     }
 });
-c(".burgerInfo--qtmais").addEventListener("click", () => {
+qs(".burgerInfo--qtmais").addEventListener("click", () => {
     modalQt++;
-    c(".burgerInfo--qt").innerHTML = modalQt;
+    qs(".burgerInfo--qt").innerHTML = modalQt;
 });
-cs(".burgerInfo--friesSize").forEach((size, sizeIndex) => {
+qsa(".burgerInfo--friesSize").forEach((size, sizeIndex) => {
     size.addEventListener("click", () => {
-        c(".burgerInfo--friesSize.selected").classList.remove("selected");
+        qs(".burgerInfo--friesSize.selected").classList.remove("selected");
         size.classList.add("selected");
     });
 });
 
 // Carrinho
 
-c(".burgerInfo--addButton").addEventListener("click", () => {
+qs(".burgerInfo--addButton").addEventListener("click", () => {
     let size = parseInt(
-        c(".burgerInfo--friesSize.selected").getAttribute("data-key"),
+        qs(".burgerInfo--friesSize.selected").getAttribute("data-key"),
     );
 
     let identifier = burgerJson[modalKey].id + "@" + size;
@@ -111,22 +111,22 @@ c(".burgerInfo--addButton").addEventListener("click", () => {
     closeModal();
 });
 
-c(".menu-openner").addEventListener("click", () => {
+qs(".menu-openner").addEventListener("click", () => {
     if (cart.length > 0) {
-        c("aside").style.left = "0";
+        qs("aside").style.left = "0";
     }
 });
 
-c(".menu-closer").addEventListener("click", () => {
-    c("aside").style.left = "100vw";
+qs(".menu-closer").addEventListener("click", () => {
+    qs("aside").style.left = "100vw";
 });
 
 function updateCart() {
-    c(".menu-openner span").innerHTML = cart.length;
+    qs(".menu-openner span").innerHTML = cart.length;
 
     if (cart.length > 0) {
-        c("aside").classList.add("show");
-        c(".cart").innerHTML = "";
+        qs("aside").classList.add("show");
+        qs(".cart").innerHTML = "";
 
         let subtotal = 0;
         let desconto = 0;
@@ -136,7 +136,7 @@ function updateCart() {
             let burgerItem = burgerJson.find((item) => item.id == cart[i].id);
             subtotal += burgerItem.price * cart[i].qt;
 
-            let cartItem = c(".models .cart--item").cloneNode(true);
+            let cartItem = qs(".models .cart--item").cloneNode(true);
 
             let burgerSizeName;
             switch (cart[i].size) {
@@ -177,17 +177,17 @@ function updateCart() {
                     updateCart();
                 });
 
-            c(".cart").append(cartItem);
+            qs(".cart").append(cartItem);
         }
 
         desconto = subtotal * 0.1;
         total = subtotal - desconto;
 
-        c(".subtotal span:last-child").innerHTML = `R$ ${subtotal.toFixed(2)}`;
-        c(".desconto span:last-child").innerHTML = `R$ ${desconto.toFixed(2)}`;
-        c(".total span:last-child").innerHTML = `R$ ${total.toFixed(2)}`;
+        qs(".subtotal span:last-child").innerHTML = `R$ ${subtotal.toFixed(2)}`;
+        qs(".desconto span:last-child").innerHTML = `R$ ${desconto.toFixed(2)}`;
+        qs(".total span:last-child").innerHTML = `R$ ${total.toFixed(2)}`;
     } else {
-        c("aside").classList.remove("show");
-        c("aside").style.left = "100vw";
+        qs("aside").classList.remove("show");
+        qs("aside").style.left = "100vw";
     }
 }
